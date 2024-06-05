@@ -1,31 +1,30 @@
-// 1)Escreva uma arrow function que recebe um array de números e retorna um novo array com todos os valores dobrados.
+/* 
+ A "Arrow function" 'dobrar' toma como argumento um array (chamado lista) utiliza o método .map() 
+ que toma cada elemento do array e o multiplica por 2 
+ (no caso, que também é uma "arrow function", tomando um número e retornando ele dobrado)
+ Por fim, a função retorna o array, já com seus elementos dobrados. 
+*/
 
 const dobrar = lista => lista.map(num => num*2); 
 
-// 2) Escreva uma arrow function que recebe um array de palavras e retorna um novo array com as palavras ordenadas pelo comprimento, da mais curta para a mais longa. 
+/*
+ Uma "Arrow Function" dentro do método .sort() que toma 'a' e 'b', dois elementos de um array e retorna a diferença dos dois,
+ dessa forma, ordena-se os elementos por tamanho.
+*/
 
-var conjuntoPalavras = []; //declarando o grupo de palavras
+// conjuntoPalavras.sort((a, b) => a.length - b.length); 
 
-while(true) {
-    let palavra = prompt("Digite uma palavra ou pressione <ENTER> para sair: "); //adquirindo input das palavras do usuário
-    if (palavra == ""){ //quebrando caso seja um item vazio
-        break
-    }
-    conjuntoPalavras.push(palavra);  //inserindo a palavra na array
-    conjuntoPalavras.sort((a, b) => a.length - b.length);
-}
-
-console.log(conjuntoPalavras);
-
-
-// 4)Escreva uma arrow function que recebe um array de números e retorna um novo array com todos os valores dobrados.
-
-
+/*
+ A função filtrarPares toma um array e retorna o array filtrado, usando o metodo .filter() que possui outra "Arrow function" dentro de si,
+ que toma um número e retorna se ele é divisível por 2.
+*/
 
 const filtrarPares = lista => lista.filter((num) => num % 2 == 0); 
 
 
-// *Exemplo de funcionamento tarefa 1 e 3
+// --- EXEMPLOS DE FUNCIONAMENTO ---
+
+// Tarefa 1 e 3
 const qntsNumeros = parseInt(prompt("Quantos números você quer digitar?: "));
 let numeros = [];
 let num = 0;
@@ -37,13 +36,25 @@ for (let i = 0; i < qntsNumeros; i++) {
 
 console.log(dobrar(numeros));
 console.log(filtrarPares(numeros));
+// Tarefa 1 e 3
+
+// Tarefa 2
+var conjuntoPalavras = []; 
+
+while(true) {
+    let palavra = prompt("Digite uma palavra ou pressione <ENTER> para sair: "); 
+    if (palavra == ""){ 
+        break
+    }
+    conjuntoPalavras.push(palavra);  
+    conjuntoPalavras.sort((a, b) => a.length - b.length);
+}
+
+console.log(conjuntoPalavras);
+// Tarefa 2
 
 
-
-
-
-
-//PESQUISA
+// --- PESQUISA ---
 
 /* 
 
@@ -81,20 +92,5 @@ Como funciona a Arrow Function:
             const calc = (num1, num2, operador) => "Resultado: " + eval(`${num1} ${operador} ${num2}`);
 
             Neste exemplo, já é uma função em Arrow Function, e el funciona de modo que, após inserir o num1,num2 e operador, ela retorna o resultado. Uma calculadora
-
-
-Exemplos dos exercícios comentados (CANDINHO):
-
-1)
-
-
-2)
-
-
-3)
-
-
-
-
 
 */
